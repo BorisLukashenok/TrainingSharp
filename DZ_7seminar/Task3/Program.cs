@@ -24,7 +24,7 @@ void PrintArray(int[,] printArray)
     }
 }
 
-void PrintsumColumnInColumns(int[,] array)
+void PrintArithmeticMeanColumnInColumns(int[,] array)
 {
     int sumColumn = 0;
     for (int i = 0; i < array.GetLength(1); i++)
@@ -42,4 +42,4 @@ int[,] myArray = new int[rnd.Next(2, 10), rnd.Next(2, 10)];
 FillArray(myArray);
 PrintArray(myArray);
 WriteLine("Среднее арифметическое по столбцам.");
-PrintsumColumnInColumns(myArray);
+PrintArithmeticMeanColumnInColumns(myArray);
