@@ -10,7 +10,8 @@ void FillSpiralArray(int[,] array)
         stepX = 1,
         stepY = 0,
         decrementLenghtPath = 0,
-        limiter = array.GetLength(1);
+        limiter = array.GetLength(1),
+        temp;
     for (int i = 1; i <= array.Length ; i++)
     {
         array[currentRow, currentCol] = i;
@@ -19,7 +20,7 @@ void FillSpiralArray(int[,] array)
             limiter = array.GetLength(1) * (decrementLenghtPath % 2) + 
                       array.GetLength(0) * ((decrementLenghtPath + 1) % 2) - 
                       (decrementLenghtPath / 2 - 1) - 2;
-            int temp = stepX;
+            temp = stepX;
             stepX = -stepY;
             stepY = temp;
             decrementLenghtPath++;
