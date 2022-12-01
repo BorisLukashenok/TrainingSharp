@@ -3,8 +3,6 @@
 using static System.Console;
 Clear();
 
-Random rnd = new Random();
-
 void FillSpiralArray(int[,] array)
 {
     int currentCol = 0,
