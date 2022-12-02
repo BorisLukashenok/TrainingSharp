@@ -57,17 +57,21 @@ for (int i = 0; i < myArray.GetLength(0); i++)
         }
 
     }
-int[,] newArray= new int[myArray.GetLength(0)-1,myArray.GetLength(1)-1];
-int a=0,
-    b=0;
-for (int i = 0; i < myArray.GetLength(0); i++)
-    for (int j = 0; j < myArray.GetLength(1); j++)
+int[,] newArray = new int[myArray.GetLength(0) - 1, myArray.GetLength(1) - 1];
+int a = 0,
+    b = 0;
+for (int i = 0; i < newArray.GetLength(0); i++)
+    for (int j = 0; j < newArray.GetLength(1); j++)
     {
-        if (myArray[i, j] < min)
-        {
-            min = myArray[i, j];
-            indexRow = i;
-            indexCol = j;
-        }
-
+        if (indexRow >= i)
+            a = 1;
+        else
+            a = 0;
+        if (indexCol >= j)
+            b = 1;
+        else
+            b = 0;
+        newArray[i, j] = myArray[i + a, j + b];
     }
+WriteLine();
+PrintArray(newArray);
